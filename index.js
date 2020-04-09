@@ -23,11 +23,14 @@ app.get("/test", function (req, res) {
 });
 
 app.use("/post", postRoute);
-mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useCreateIndex: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(
+  "mongodb+srv://EmberOnFire13:Fairy121@would-you-rather-c6oc5.azure.mongodb.net/test?retryWrites=true&w=majority",
+  {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true,
+  }
+);
 const connection = mongoose.connection;
 connection.once("open", () => {});
 
